@@ -1,45 +1,32 @@
 import { ReactNode } from "react";
 
-// export interface PropertyProps {
-//   name: string;
-//   address: {
-//     state: string;
-//     city: string;
-//     country: string;
-//   };
-//   rating: number;
-
-//   category: string[];
-//   price: number;
-//   offers: {
-//     bed: string;
-//     shower: string;
-//     occupants: string;
-//   };
-//   image: string;
-//   discount: string;
-// }
-
-
 export interface PropertyProps {
-  name: string;
-  rating: number;
-  address: {
-    city: string;
-    country: string;
-  };
-  image: string;
-  description: string;
-  category: string[];
-  price: number;
-  reviews: {
     name: string;
-    avatar: string;
+    description:string;
+    address: {
+      state: string;
+      city: string;
+      country: string;
+    };
+    reviews: {
+      name: string;
+      avatar: string;
+      rating: number;
+      comment: string;
+    }[];
     rating: number;
-    comment: string;
-  }[];
-  hostInfo?: string;
+    category: string[];
+    price: number;
+    offers: {
+      bed: string;
+      shower: string;
+      occupants: string;
+    };
+    image: string;
+    discount?: string;
 }
+  
+
 
 
 export interface LayoutProps {
@@ -106,19 +93,3 @@ export interface CardProps {
   activeFilter?: string;
   setActiveFilter?: (filter: string) => void;
 }
-export const PROPERTYLISTINGSAMPLE = [
-  {
-    name: "Cozy Apartment",
-    rating: 4.5,
-    address: { city: "Lagos", country: "Nigeria" },
-    image: "/images/apartment.jpg",
-    description: "A cozy apartment near the beach.",
-    category: ["Wi-Fi", "Kitchen", "Air conditioning"],
-    price: 120,
-    reviews: [
-      { name: "Gabriella", avatar: "/images/user1.jpg", rating: 5, comment: "Loved my stay!" },
-      { name: "John", avatar: "/images/user2.jpg", rating: 4, comment: "Very comfortable." },
-    ],
-    hostInfo: "Hosted by Mary, a superhost with 5 years of experience."
-  }
-];
